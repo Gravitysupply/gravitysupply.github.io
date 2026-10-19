@@ -60,4 +60,9 @@ fetch('catalogo.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.jso
 document.title=(D.tienda.nombre||'Gravity Supply')+' · Catálogo';
   $('#upd').textContent=ago(D.actualizado);const n=D.productos.filter(p=>p.e!=='agotado').length;$('#cnt').textContent=D.productos.length?n+' disponibles':'';render();
 }).catch(()=>{$('#upd').textContent='';$('#list').innerHTML='<div class="empty">No se pudo cargar el catálogo. Revisa tu conexión y vuelve a abrir el enlace.</div>'});
+// la foto de fondo arranca siempre justo debajo del buscador
+(function(){const tb=document.querySelector('.tools');if(!tb)return;let raf=0;
+  const set=()=>{raf=0;document.documentElement.style.setProperty('--py',Math.max(0,Math.round(tb.getBoundingClientRect().bottom))+'px')};
+  const q=()=>{if(!raf)raf=requestAnimationFrame(set)};
+  addEventListener('scroll',q,{passive:true});addEventListener('resize',q);set()})();
 })();
