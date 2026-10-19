@@ -85,3 +85,16 @@ footer{color:var(--muted);font-size:13px;padding-block:8px 32px;border-top:1px s
 .copy{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:600 14px var(--f-cond);letter-spacing:.06em}
 .copy button{font:600 13px var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:0;padding:5px 10px;cursor:pointer}
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.panel{animation:up .22s ease-out}@keyframes up{from{transform:translateY(24px);opacity:.6}}}
+
+/* fondo de escena detrás de los productos */
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:#0E110F url(fondo-montes.svg) center bottom/cover no-repeat}
+.escena{height:clamp(170px,28vw,380px);background:#0E110F url(fondo.svg) 62% 42%/cover no-repeat}
+.card{color:var(--ink)}
+header{background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax)}
+.tools{background:var(--bg)}
+footer{color:#C9CBC2;border-top-color:#2C322D}
+main{color:#F3F0E8}
+main .empty{color:#C9CBC2}
+.sec{color:#C9CBC2!important}
+.card{border-color:transparent}
+.card:hover{border-color:var(--accent)}
