@@ -88,7 +88,9 @@ footer{color:var(--muted);font-size:13px;padding-block:8px 32px;border-top:1px s
 
 /* fondo de escena detrás de los productos */
 body::after{content:"";position:fixed;inset:0;z-index:-1;background:#0E110F url(fondo-montes.svg) center bottom/cover no-repeat}
-.escena{height:clamp(170px,28vw,380px);background:#0E110F url(fondo.svg) 62% 42%/cover no-repeat}
+.escena{position:relative;overflow:hidden;height:clamp(260px,40vw,520px);background:#0E110F url(escena.jpg) center 6%/cover no-repeat}
+@media (max-width:700px){.escena{background-image:url(escena-movil.jpg)}}
+.escena::after{content:"";position:absolute;right:-30px;bottom:0;width:min(46%,420px);height:14px;background:var(--accent);transform:skewX(-35deg)}
 .card{color:var(--ink)}
 header{background:var(--bg);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax)}
 .tools{background:var(--bg)}
