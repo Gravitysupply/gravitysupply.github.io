@@ -98,3 +98,6 @@ main .empty{color:#C9CBC2}
 .sec{color:#C9CBC2!important}
 .card{border-color:transparent}
 .card:hover{border-color:var(--accent)}
+
+.escena{position:relative;overflow:hidden;height:clamp(90px,13vw,170px)}
+.escena::after{content:"";position:absolute;right:-30px;bottom:0;width:min(46%,420px);height:12px;background:var(--accent);transform:skewX(-35deg)}
