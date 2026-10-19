@@ -62,7 +62,9 @@ document.title=(D.tienda.nombre||'Gravity Supply')+' · Catálogo';
 }).catch(()=>{$('#upd').textContent='';$('#list').innerHTML='<div class="empty">No se pudo cargar el catálogo. Revisa tu conexión y vuelve a abrir el enlace.</div>'});
 // la foto de fondo arranca siempre justo debajo del buscador
 (function(){const tb=document.querySelector('.tools');if(!tb)return;let raf=0;
-  const set=()=>{raf=0;document.documentElement.style.setProperty('--py',Math.max(0,Math.round(tb.getBoundingClientRect().bottom))+'px')};
+  const es=document.querySelector('.escena');
+  const set=()=>{raf=0;const tbb=Math.max(0,Math.round(tb.getBoundingClientRect().bottom));const r=document.documentElement.style;r.setProperty('--py',tbb+'px');
+    if(es)r.setProperty('--sy',Math.max(tbb,Math.round(es.getBoundingClientRect().bottom)-12)+'px')};
   const q=()=>{if(!raf)raf=requestAnimationFrame(set)};
   addEventListener('scroll',q,{passive:true});addEventListener('resize',q);set()})();
 })();

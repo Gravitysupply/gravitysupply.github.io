@@ -101,3 +101,11 @@ main .empty{color:#C9CBC2}
 
 .escena{position:relative;overflow:hidden;height:clamp(90px,13vw,170px)}
 .escena::after{content:"";position:absolute;right:-30px;bottom:0;width:min(46%,420px);height:12px;background:var(--accent);transform:skewX(-35deg)}
+
+/* pie destacado: franja hueso de lado a lado */
+footer{background:var(--bg);color:var(--ink);box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax);border-top:0;padding-block:22px 36px;margin-top:8px;font-size:14px;font-weight:600;position:relative}
+footer::before{content:"";position:absolute;left:-30px;top:0;width:min(40%,360px);height:8px;background:var(--accent);transform:skewX(-35deg)}
+/* en computadora la franja naranja se queda pegada debajo del buscador */
+@media (min-width:701px){
+  .escena::after{position:fixed;right:-30px;bottom:auto;top:var(--sy,0px);z-index:3}
+}
